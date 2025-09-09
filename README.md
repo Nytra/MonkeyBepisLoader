@@ -13,7 +13,7 @@ Installation steps:
 
 3. Extract the contents of [MonkeyBepisLoader.zip](https://github.com/ResoniteModdingGroup/MonkeyBepisLoader/releases/latest/download/MonkeyBepisLoader.zip) into the root of your Resonite installation folder and say yes to overwriting any files
 
-4. ***(Linux only! Windows users don't do this step!)*** Change the steam launch options to `./run_monkeybepisloader.sh %command%`
+4. ***(Only do this step on Linux!)*** Change the steam launch options to `./run_monkeybepisloader.sh %command%`
 
 5. Start Resonite and enjoy all the mods!
 
