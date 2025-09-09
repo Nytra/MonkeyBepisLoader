@@ -11,7 +11,7 @@ Installation steps:
 
 2. Install MonkeyLoader + Resonite GamePack (and optionally the RML GamePack) (https://github.com/ResoniteModdingGroup/MonkeyLoader.GamePacks.Resonite)
 
-3. Extract the contents of [MonkeyBepisLoader.zip](https://github.com/ResoniteModdingGroup/MonkeyBepisLoader/releases/latest/download/MonkeyBepisLoader.zip) into your Resonite installation folder and say yes to overwriting any files
+3. Extract the contents of [MonkeyBepisLoader.zip](https://github.com/ResoniteModdingGroup/MonkeyBepisLoader/releases/latest/download/MonkeyBepisLoader.zip) into the root of your Resonite installation folder and say yes to overwriting any files
 
 4. Start Resonite and enjoy all the mods!
 
