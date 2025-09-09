@@ -2,7 +2,7 @@ A [hookfxr](https://github.com/MonkeyModdingTroop/hookfxr) game wrapper that loa
 
 Some notes: 
 
-- MonkeyLoader pre-patchers don't work.
+- MonkeyLoader pre-patchers don't work. BepInEx ones do.
 - It doesn't matter which order you do the first two installation steps.
 
 Installation steps:
