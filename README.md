@@ -13,6 +13,13 @@ Installation steps:
 
 3. Extract the contents of [MonkeyBepisLoader.zip](https://github.com/ResoniteModdingGroup/MonkeyBepisLoader/releases/latest/download/MonkeyBepisLoader.zip) into the root of your Resonite installation folder and say yes to overwriting any files
 
-4. Start Resonite and enjoy all the mods!
+4. ***(Linux only! Windows users don't do this step!)*** Change the steam launch options to `./run_monkeybepisloader.sh %command%`
+
+5. Start Resonite and enjoy all the mods!
 
 You can get BepInEx mods from the modding discord or from [here](https://thunderstore.io/c/resonite/?section=mods) (currently unlisted and no mod manager support).
+
+### How to disable
+
+- Use the Steam launch argument `--hookfxr-disable`
+- Alternatively, rename or remove the `hostfxr.dll` file in the Resonite folder
