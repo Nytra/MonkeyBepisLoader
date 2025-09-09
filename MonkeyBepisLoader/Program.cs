@@ -82,15 +82,12 @@ internal class MonkeyLoaderLoader
 		// MonkeyLoader was already preloaded
 		var monkeyLoaderAssembly = loadedAssemblies.FirstOrDefault(a => a.GetName().Name == "MonkeyLoader");
 
-		if (loadedAssemblies.FirstOrDefault(a => a.GetName().Name == "System.Management") is null)
-		{
-			var systemManagementPath = RuntimeInformation.RuntimeIdentifier.StartsWith("win")
+		var systemManagementPath = RuntimeInformation.RuntimeIdentifier.StartsWith("win")
 					? new FileInfo(Path.Combine("runtimes", "win", "lib", "net9.0", "System.Management.dll"))
 					: new FileInfo("System.Management.dll");
 
-			if (systemManagementPath.Exists)
-				loadContext.LoadFromAssemblyPath(systemManagementPath.FullName);
-		}
+		if (systemManagementPath.Exists)
+			loadContext.LoadFromAssemblyPath(systemManagementPath.FullName);
 
 		var monkeyLoaderType = monkeyLoaderAssembly!.GetType("MonkeyLoader.MonkeyLoader");
 		var loggingLevelType = monkeyLoaderAssembly.GetType("MonkeyLoader.Logging.LoggingLevel");
