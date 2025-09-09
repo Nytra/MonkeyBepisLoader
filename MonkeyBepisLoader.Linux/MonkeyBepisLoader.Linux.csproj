@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PublishSingleFile>false</PublishSingleFile>
+    <AssemblyFileName>$(AssemblyTitle).dll</AssemblyFileName>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(CopyToLibraries)'=='true'">
+    <Copy SourceFiles="$(TargetDir)$(TargetFileName)" DestinationFiles="$(ResonitePath)/$(TargetFileName)" />
+    <Message Text="Copied $(TargetFileName) to $(ResonitePath)/$(AssemblyFileName)" Importance="high" />
+
+    <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFiles="$(ResonitePath)/$(TargetName).pdb" />
+    <Message Text="Copied $(TargetName).pdb to $(ResonitePath)/$(TargetName).pdb" Importance="high" />
+
+    <Copy SourceFiles="$(TargetDir)$(TargetName).runtimeconfig.json" DestinationFiles="$(ResonitePath)/$(TargetName).runtimeconfig.json" />
+    <Message Text="Copied $(TargetName).runtimeconfig.json to $(ResonitePath)/$(TargetName).runtimeconfig.json" Importance="high" />
+
+    <Copy SourceFiles="$(TargetDir)$(TargetName).deps.json" DestinationFiles="$(ResonitePath)/$(TargetName).deps.json" />
+    <Message Text="Copied $(TargetName).deps.json to $(ResonitePath)/$(TargetName).deps.json" Importance="high" />
+
+    <Copy SourceFiles="$(TargetDir)run_monkeybepisloader.sh" DestinationFiles="$(ResonitePath)/run_monkeybepisloader.sh" />
+    <Message Text="Copied run_monkeybepisloader.sh to $(ResonitePath)/run_monkeybepisloader.sh" Importance="high" />
+  </Target>
+
+  <ItemGroup>
+    <None Update="run_monkeybepisloader.sh">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+
+    <Compile Include="../MonkeyBepisLoader/**/*.cs" Exclude="../MonkeyBepisLoader/obj/**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HarmonyX" Version="2.15.0" />
+    <PackageReference Include="MonkeyLoader" Version="0.27.2-beta" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BepisLoader">
+      <HintPath>$(ResonitePath)\BepisLoader.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
