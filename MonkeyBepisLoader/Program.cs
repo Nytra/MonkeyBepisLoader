@@ -82,6 +82,7 @@ internal class MonkeyLoaderLoader
 		// MonkeyLoader was already preloaded
 		var monkeyLoaderAssembly = loadedAssemblies.FirstOrDefault(a => a.GetName().Name == "MonkeyLoader");
 
+		// Need to load the proper System.Management to avoid crashing
 		var systemManagementPath = RuntimeInformation.RuntimeIdentifier.StartsWith("win")
 					? new FileInfo(Path.Combine("runtimes", "win", "lib", "net9.0", "System.Management.dll"))
 					: new FileInfo("System.Management.dll");
@@ -217,13 +218,21 @@ internal class Patcher
 class Program
 {
 	private static readonly FileInfo _bepisPath = new("BepisLoader.dll");
+	private static readonly DirectoryInfo _harmonyX_Path = new(Path.Combine("BepInEx", "core"));
 	private static Assembly? _bepisAsm;
 
 	private static void PreloadAssemblies()
 	{
 		_bepisAsm = Assembly.LoadFrom(_bepisPath.FullName);
+
+		// Load HarmonyX and MonoMod.RuntimeDetour from the BepInEx/core folder
+		// Everything else we need is in the MonkeyLoader folder
+		Assembly.LoadFrom(Path.Combine(_harmonyX_Path.FullName, "0Harmony.dll"));
+		Assembly.LoadFrom(Path.Combine(_harmonyX_Path.FullName, "MonoMod.RuntimeDetour.dll"));
+
 		foreach (var file in Directory.GetFiles("MonkeyLoader").Where(f => f.EndsWith(".dll")))
 		{
+			if (Path.GetFileNameWithoutExtension(file) == "0Harmony") continue; // don't load normal Harmony
 			Assembly.LoadFrom(file);
 		}
 	}
