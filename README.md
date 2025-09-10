@@ -17,7 +17,7 @@ Installation steps:
 
 5. Start Resonite and enjoy all the mods!
 
-You can get BepInEx mods from the modding discord or from [here](https://thunderstore.io/c/resonite/?section=mods).
+You can get BepInEx mods from the Resonite modding discord or from [Thunderstore](https://thunderstore.io/c/resonite/?section=mods).
 
 ### How to disable
 
