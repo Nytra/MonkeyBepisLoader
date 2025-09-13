@@ -1,6 +1,6 @@
 A [hookfxr](https://github.com/MonkeyModdingTroop/hookfxr) game wrapper that loads MonkeyLoader and BepInEx into Resonite at the same time.
 
-### It is generally recommended to use this instead, especially if you need mod manager support: https://thunderstore.io/c/resonite/p/Nytra/MonkeyLoaderLoader/
+## READ THIS: It is generally recommended to use [MonkeyLoaderLoader](https://thunderstore.io/c/resonite/p/Nytra/MonkeyLoaderLoader/) instead (available on Thunderstore), especially if you need mod manager support.
 
 Some notes: 
 
