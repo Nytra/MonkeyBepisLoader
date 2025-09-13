@@ -1,6 +1,6 @@
 A [hookfxr](https://github.com/MonkeyModdingTroop/hookfxr) game wrapper that loads MonkeyLoader and BepInEx into Resonite at the same time.
 
-THIS HAS BEEN SUPERCEDED BY https://thunderstore.io/c/resonite/p/Nytra/MonkeyLoaderLoader/
+# THIS HAS BEEN SUPERCEDED BY https://thunderstore.io/c/resonite/p/Nytra/MonkeyLoaderLoader/
 
 Some notes: 
 
